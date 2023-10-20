@@ -1,0 +1,178 @@
+<section class="text-center">
+  <div class="container">
+    <div
+      class="card mx-4 mx-md-5 shadow-5-strong mb-5"
+      style="
+        margin-top: 30px;
+
+        background: hsla(0, 0%, 100%, 0.8);
+
+        backdrop-filter: blur(30px);
+      "
+    >
+      <div class="card-body py-5 px-md-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-10">
+            <div class="text-center">
+              <h3>E-Commerce</h3>
+
+              <div class="text-start">
+                This application has the following sections
+
+                <ul>
+                  <li>Login - Existing User</li>
+
+                  <li>SignUp - New User</li>
+
+                  <li>
+                    Home
+
+                    <ul>
+                      <li>
+                        Navbar
+
+                        <ul>
+                          <li>Cart</li>
+
+                          <li>Order</li>
+
+                          <li>Log out</li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        Products
+
+                        <ul>
+                          <li>Product details with Image</li>
+
+                          <li>Add to cart - To add products to cart</li>
+
+                          <li>Buy Now - To buy products</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>Cart Page with products that added to cart</li>
+
+                  <li>Order Page with placed orders in it.</li>
+                </ul>
+              </div>
+
+              <div class="text-start">
+                Technology used to build this application
+
+                <ul>
+                  <li>Angular</li>
+
+                  <li>HTML</li>
+
+                  <li>Bootstrap</li>
+
+                  <li>Typescript</li>
+
+                  <li>CSS</li>
+                </ul>
+              </div>
+
+              <div class="text-start">
+                Steps used and challenges faced to build this application:-
+
+                <ol>
+                  <li>
+                    This Project consists of multiple components such as Home,
+                    Cart, Login, Register and Orders and for the navigation
+                    between components <span class="fw-bold">Routing</span> has
+                    been used via app routing module by providing respective
+                    routes in the route array.
+                  </li>
+
+                  <li>
+                    The respective service and models required for the
+                    application has been generated using the commands in git
+                    bash
+                  </li>
+
+                  <li>
+                    Used <span class="fw-bold">Template Driven</span> form
+                    validation for the login and register page.
+                  </li>
+
+                  <li>
+                    For fetching the products an Api call has been made using
+
+                    <span class="fw-bold">HTTPClient (GET)</span> request.
+                  </li>
+
+                  <li>
+                    Stored the product, cart and order details in the
+
+                    <span class="fw-bold">Local Storage</span>
+
+                    . Stored the user details in the
+
+                    <span class="fw-bold">Session Storage</span>.
+                  </li>
+
+                  <li>
+                    The add to cart and orders functionality logic has been
+                    designed in a logic that each user can access only his/her
+                    cart and order details in his/her login.
+                  </li>
+
+                  <li>
+                    No logged in user can access cart order and log out so for
+                    that
+
+                    <span class="fw-bold">CanActivate()</span> method of auth
+                    guard in angular. For this process session storage has been
+                    used.
+                  </li>
+
+                  <li>
+                    Every Authenticated user can access cart to add or remove
+                    product also check out product to see it the orders page.
+                  </li>
+                </ol>
+
+                Challenges
+
+                <ol>
+                  <li>
+                    Frequent API call - Used
+
+                    <span class="fw-bold">Observer()</span> method to reduce the
+                    API call by fetching and checking it with the local storage.
+                  </li>
+
+                  <li>Handling Cart for individual user.</li>
+                </ol>
+              </div>
+
+              <div class="text-start">
+                To login and access the website use the below credentials
+
+                <ul>
+                  <li class="fw-bold">
+                    email : bhargav@gamil.com | password : 123456
+                  </li>
+
+                  
+                </ul>
+              </div>
+
+              <div class="text-start">
+                Click the below button to visit site!
+              </div>
+            </div>
+
+            <br />
+
+            <i class="btn btn-primary bi bi-arrow-right" routerLink="/signin"> Continue</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

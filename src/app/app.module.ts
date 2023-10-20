@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { StorageService } from './services/storage.service';
 import { AuthService } from './services/auth.service';
 import { AsignupService } from './services/asignup.service';
+import { IntroComponent } from './component/intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AsignupService } from './services/asignup.service';
     HomeComponent,
     CartComponent,
     OrdersComponent,
+    IntroComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [StorageService, AuthService, AsignupService],

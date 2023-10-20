@@ -43,16 +43,27 @@ export class CartService {
       this.storageService.setCart(cart);
     }
   }
-  
+
   getcount(): number {
     let count: number = 0;
-    const cartProducts = this.storageService.getCartProducts();
+    const cart = this.storageService.getCart();
+    console.log(cart);
+    let loggedUser: Users = this.authService.getloggedInUser();
 
-    for (let product of cartProducts) {
-      if (product.count) {
-        count+=product.count!
+    let userCart: Cart | undefined = cart.find(
+      (c) => c.User.id === loggedUser.id
+    )!;
+
+    console.log(userCart);
+    if (userCart) {
+      for (let product of userCart.cart) {
+        if (product.count) {
+          count += product.count!;
+        }
       }
     }
+
+    console.log(count);
 
     return count;
   }
