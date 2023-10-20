@@ -1,0 +1,69 @@
+<div
+  class="vh-100 bg-image"
+  style="
+    background-image: url('https://img.freepik.com/premium-vector/sign-page-abstract-concept-vector-illustration_107173-25670.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+  "
+>
+  <form (ngSubmit)="submit(loginform)" #loginform="ngForm">
+    <main class="form-signin w-50 my-5 m-auto">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <label for="email" class="form-label"> email</label>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="email"
+          ngModel
+          required
+          email
+          #modelEmail="ngModel"
+          [ngClass]="modelEmail.invalid ? 'is-invalid' : ''"
+        />
+        <div *ngIf="modelEmail.invalid" class="invalid-feedback">
+          Please Enter valid Email
+        </div>
+      </div>
+      <label for="password" class="form-label"> password</label>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="password"
+          ngModel
+          required
+          password
+          #modelpassword="ngModel"
+          [ngClass]="
+            modelpassword.invalid && modelpassword.touched ? 'is-invalid' : ''
+          "
+        />
+        <div *ngIf="modelpassword.invalid" class="invalid-feedback">
+          password must be greter than 5 characters
+        </div>
+      </div>
+      <div class="form-floating mt-3 d-flex">
+        <p>
+          New user
+          <a routerLink="/signup"> Register</a>
+          here
+        </p>
+      </div>
+      <div *ngIf="error.length > 0" class="text-danger">
+        {{ error }}
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary w-100 py-2 mt-4"
+        [disabled]="loginform.invalid"
+      >
+        Sign In
+      </button>
+    </main>
+  </form>
+</div>

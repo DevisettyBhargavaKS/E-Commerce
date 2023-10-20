@@ -1,0 +1,28 @@
+<p class="fs-1">Products</p>
+<div class="row">
+  <div class="col-4 mt-4" *ngFor="let product of products">
+    <div
+      class="border rounded p-2 bg-primary-white border-primary-subtle d-flex flex-column"
+    >
+      <img
+        [src]="product.image"
+        alt="image"
+        style="min-width: 150px; height: 200px"
+      />
+      <p class="fs-5 my-1 mt-2 text-center">
+        {{ product.title.substring(0, 18) }}
+      </p>
+      <p class="fs-4 my-1 mb-2 text-center">₹ ${{ product.price }}</p>
+      <button class="btn btn-secondary" (click)="addToCart(product.id)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="spinner-border d-flex justify-content-center text-secondary"
+  role="status"
+>
+  <a class="visually-hidden">Loading...</a>
+</div>

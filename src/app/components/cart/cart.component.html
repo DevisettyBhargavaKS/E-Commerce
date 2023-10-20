@@ -1,0 +1,33 @@
+<div class="container my-5">
+  <table class="table table-ordered mt-5">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">PRODUCT NAME</th>
+        <th scope="col">QUANTITY</th>
+
+        <th scope="col">PRICE</th>
+        <th scope="col">TOTAL-PRICE</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of carts">
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.count }}</td>
+
+        <td>{{ product.price }}</td>
+        <td>{{ product.price * product.count! }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <footer>
+    <table
+      class="table table-bordered d-flex justify-content-end align-items-end"
+    >
+      <button class="btn-primary" (click)="clearCart()" routerLink=" ">
+        checkout
+      </button>
+    </table>
+  </footer>
+</div>

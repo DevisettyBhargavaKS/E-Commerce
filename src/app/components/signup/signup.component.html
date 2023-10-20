@@ -1,0 +1,114 @@
+<div
+  class="vh-100 bg-image"
+  style="
+    background-image: url('https://cdni.iconscout.com/illustration/premium/thumb/sign-up-8044864-6430773.png');
+    background-repeat: no-repeat;
+    background-position: right;
+  "
+>
+  <form (ngSubmit)="submit(signupform)" #signupform="ngForm">
+    <main class="form-signin w-50 my-5 m-auto">
+      <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+
+      <label for="name">User Name</label>
+      <div class="form-floating mb-3">
+        <input
+          type="name"
+          class="form-control"
+          id="name"
+          name="uname"
+          placeholder="Enter name"
+          ngModel
+          required
+          uname
+          #name1="ngModel"
+          [ngClass]="name1.invalid ? 'is-invalid' : ''"
+        />
+        <div *ngIf="name1.invalid" class="invalid-feedback">
+          Please Enter your Name
+        </div>
+      </div>
+      <label for="email">Email </label>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter Email"
+          ngModel
+          required
+          email
+          #validateemail="ngModel"
+          [ngClass]="
+            validateemail.invalid && validateemail.touched ? 'is-invalid' : ''
+          "
+        />
+        <div *ngIf="validateemail.invalid" class="invalid-feedback">
+          Please Enter valid Email
+        </div>
+      </div>
+      <label for="floatingPassword">Password</label>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          placeholder="Password"
+          name="password"
+          ngModel
+          required
+          password
+          #validatepassword="ngModel"
+          [ngClass]="
+            validatepassword.invalid && validatepassword.touched
+              ? 'is-invalid'
+              : ''
+          "
+        />
+        <div *ngIf="validatepassword.invalid" class="invalid-feedback">
+          Please enter password
+        </div>
+      </div>
+      <label for="floatingPassword">Confirm Password</label>
+      <div class="form-floating mb-3">
+        <input
+          type="password2"
+          class="form-control"
+          id="password2"
+          placeholder=" Confirm Password"
+          name="pass"
+          ngModel
+          required
+          password
+          #validatepass="ngModel"
+          [ngClass]="
+            validatepass.invalid && validatepass.touched ? 'is-invalid' : ''
+          "
+        />
+        <div *ngIf="validatepass.invalid" class="invalid-feedback">
+          Password Must be same
+        </div>
+        <div
+          *ngIf="validatepassword.value !== validatepass.value"
+          class="text-danger"
+        >
+          password mismatch
+        </div>
+      </div>
+      <div class="form-floating mt-3 d-flex">
+        <p>
+          Already a user
+          <a routerLink="/signin"> login</a>
+          here
+        </p>
+      </div>
+      <button
+        class="btn btn-primary w-100 py-2 mt-4"
+        [disabled]="signupform.invalid"
+      >
+        Sign Up
+      </button>
+    </main>
+  </form>
+</div>
